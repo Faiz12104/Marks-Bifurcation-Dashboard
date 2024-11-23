@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Home Page - Student Details</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <nav class="navbar">
+    <h2>Marks Bifurcation Dashboard</h2>
+    <a href="index.html" onclick="clearSessionStorage()">Home</a>
+    <a href="presentation1.html" onclick="clearSessionStorage()">Presentation 1</a>
+    <a href="presentation2.html" onclick="clearSessionStorage()">Presentation 2</a>
+    <a href="presentation3.html" onclick="clearSessionStorage()">Presentation 3</a>
+    <a href="result.html" onclick="clearSessionStorage()">Result</a> 
+      <!-- Logout button -->
+      <button id="logoutBtn" style="display: none;">Logout</button>
+  </nav>
+  <p id="userInfo"></p>
+
+  <div class="container">
+    <h1>Student Details</h1>
+  </div>
+  <h2>Student Group Management</h2>
+  <input type="text" id="studentNameInput" placeholder="Enter Student Name" />
+  <input type="text" id="groupInput" placeholder="Enter Group Name" />
+  <button onclick="addStudentRow()">Add Student</button>
+
+  <table id="studentTable" border="1">
+    <thead>
+      <tr>
+        <th>Group Name</th>
+        <th>Students</th>
+        <th>Actions</th>
+      </tr>
+    </thead>
+    <tbody></tbody>
+  </table>
+
+  <script src="script.js"></script> <!-- Link to your JavaScript file -->
+  <script>
+    if (!localStorage.getItem('isLoggedIn')) {
+    // If not logged in, redirect to login page
+    window.location.href = 'index.html'; // Replace with your login page URL
+  }
+  </script>
+</body>
+</html>
